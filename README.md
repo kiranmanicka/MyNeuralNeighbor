@@ -12,3 +12,6 @@ python nst.py --content [name of content image in content directory] --style [na
 
 When using nst.py or nnst.py, it will store the resulting blended image into either nst_blended or nnst_blended.
 I have already included some example blended images.
+
+Observations:
+
