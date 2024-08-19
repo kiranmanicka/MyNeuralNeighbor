@@ -15,3 +15,5 @@ I have already included some example blended images.
 
 Observations:
 
+Limitations:
+
