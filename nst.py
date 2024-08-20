@@ -54,7 +54,7 @@ style_image=Image.open(f'{style_directory}/{args.style}')
 
 
 transform = transforms.Compose([
-    transforms.Resize((128, 128)),
+    transforms.Resize((512, 512)),
     transforms.ToTensor(),
     
 ]) 
@@ -165,11 +165,11 @@ while i[0]<iterations:
     # updateing the parameters after each iteration
     LBFGS_optimizer.step(closure)
 
-invTrans2 = transforms.Compose([ 
+invTrans= transforms.Compose([ 
                                 transforms.ToPILImage()
                                 
                                ])
 with torch.no_grad():
     generated_image.clamp_(0, 1)
-inversed_image=invTrans2(generated_image)
-inversed_image.show()
+inversed_image=invTrans(generated_image)
+inversed_image.save(f'nst_blended/{args.content.split('.')[0]}_{args.style.split('.')[0]}.jpeg')
